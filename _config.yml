@@ -1,0 +1,20 @@
+# Site settings
+title: Bart Jaskulski
+email: bjaskulski@protonmail.com
+url: "https://bartjaskulski.com"
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:title
+#excerpt_separator: <!--more-->
+
+# Optimize Jekyll
+exclude:
+  - .editorconfig
+  - .git
+  - .jekyll-cache
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - bin
