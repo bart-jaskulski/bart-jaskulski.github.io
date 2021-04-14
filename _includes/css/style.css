@@ -1,9 +1,11 @@
+@import "prism-coldark-dark.css";
+
 html {
   margin: auto;
   max-width: 70ch;
   padding: max(12px, 2.5vw);
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu,
-    Cantarell, Helvetica Neue;
+  Cantarell, Helvetica Neue, sans-serif;
   font-size: clamp(1.1rem, 1.2vw + 1vh, 1.25rem);
   box-sizing: border-box;
   color: var(--text-color, #151617);
@@ -102,7 +104,7 @@ body > footer {
 }
 
 @media (prefers-color-scheme: dark) {
-  html {
+  :root {
     --text-color: #dddfd4;
     --background-color: #151617;
     --link-visited: #9ebfe5;

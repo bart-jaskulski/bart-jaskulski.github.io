@@ -1,24 +1,17 @@
-const postcssImport = require( 'postcss-import' )
-const postcssNormalize = require( 'postcss-normalize' )
+const atImport = require( 'postcss-import' )
 const postcssPresetEnv = require( 'postcss-preset-env' )
-const postcssCombineMediaQuery = require( 'postcss-combine-media-query' )
-const postcssExtractMediaQuery = require( 'postcss-extract-media-query' )
 const postcssPxToRem = require( 'postcss-pxtorem' )
 const cssnano = require( 'cssnano' );
 
-const paths = require( './paths' );
+// const paths = require( './paths' );
+const path = require('path');
 
-module.exports = ctx => (
-	{
-		map: ctx.options.map,
+module.exports = {
+		map: 'inline',
+		from: path.join( __dirname, '_includes/css/style.css' ),
 		plugins: [
-			postcssImport(
-				postcssNormalize().postcssImport( {
-					path: [ paths.css.src ]
-				} )
-			),
+			atImport(),
 			postcssPresetEnv( {
-				// importFrom: `${paths.css.src}/_custom-media.css`,
 				autoprefixer: {
 					'grid': false,
 				},
@@ -29,7 +22,6 @@ module.exports = ctx => (
 					"nesting-rules": true,
 				},
 			} ),
-			postcssCombineMediaQuery(),
 			postcssPxToRem( {
 				rootValue: 16,
 				mediaQuery: true,
@@ -37,17 +29,6 @@ module.exports = ctx => (
 				unitPrecision: 1,
 				minPixelValue: 10,
 			} ),
-			// postcssExtractMediaQuery({
-			// 	output: {
-			// 		path: paths.css.dest,
-			// 		name: '[name]-[query].[ext]',
-			// 	},
-			// 	queries: {
-			// 		'(min-width: 37.5rem)': 'desktop',
-			// 		'(max-width: 37.5rem)': 'mobile',
-			// 	},
-			// 	extractAll: false,
-			// }),
-			ctx.env === 'production' ? cssnano() : null,
+			cssnano()
 		]
-	})
+	}
