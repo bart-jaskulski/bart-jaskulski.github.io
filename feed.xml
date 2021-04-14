@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="https://www.w3.org/2005/Atom">
+    <title>Bart Jaskulski</title>
+    <subtitle></subtitle>
+    <link href="//bartjaskulski.com/feed.xml" rel="self"/>
+    <link href="//bartjaskulski.com" rel="alternate" type="text/html"/>
+    <author>
+        <name>Bart Jaskluski</name>
+        <email>bjaskulski@protonmail.com</email>
+    </author>
+    
+    <id>//bartjaskulski.com</id>
+</feed>
