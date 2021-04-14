@@ -1,4 +1,5 @@
 node_modules
 _site/
 *.fixme
-package-lock.json
+.idea
+./package-lock.json

@@ -6,7 +6,7 @@ slugify () {
 
 read -p "Post title: " post_title
 FILENAME="$(date +'%Y-%m-%d')-$(slugify $post_title[*])"
-cat <<EOF > ./_posts/${FILENAME}.md
+cat <<EOF > ./blog/${FILENAME}.md
 ---
 layout: post
 title: "${post_title[*]}"
