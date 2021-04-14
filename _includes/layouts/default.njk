@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+{% include 'head.njk' %}
+<body>
+  <a class="screen-reader-only" href="#main">Skip to content</a>
+  {% include 'navigation.njk' %}
+  <main id="main">
+    {{ content | safe }}
+  </main>
+  {% include 'footer.njk' %}
+</body>
+</html>

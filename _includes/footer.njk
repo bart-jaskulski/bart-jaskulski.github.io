@@ -1,0 +1,9 @@
+{% set date %}{{ page.date | date('yyyy') }}{% endset %}
+<footer>
+  <nav aria-label="Secondary">
+    <ul>
+      <li><a href="{{ site.url }}/feed.xml">Feed</a></li>
+    </ul>
+  </nav>
+  <p>{{ site.title }} &copy; <time datetime="{{ date }}">{{ date }}</time></p>
+</footer>

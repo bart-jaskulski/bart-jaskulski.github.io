@@ -1,0 +1,12 @@
+---
+layout: default.njk
+---
+<header>
+  <h1>{{ title }}</h1>
+  <p><strong>{{ post.excerpt }}</strong></p>
+</header>
+{{ content | safe }}
+<footer>
+  <time>@ {{ page.date.toUTCString() }}</time>
+  <a href="https://github.com/11ty/11ty-website/blob/main/{{ page.inputPath }}">Suggest an edit</a>
+</footer>

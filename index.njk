@@ -1,13 +1,16 @@
 ---
-layout: default
+layout: default.njk
+eleventyNavigation:
+  key: Bart Jaskulski
+  order: 1
 ---
 <p>Welcome to this lonely place, where I wolud like to bring some life with posts about programming and, well, life...</p>
 <p>Let's keep it low at the beginning.</p>
 <h2>By the time I've posted:</h2>
 <ol reversed>
-  {%- for post in site.posts -%}
+  {%- for post in collections.blog | reverse -%}
     <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
+      <a href="{{ post.url | url }}">{{ post.data.title }}</a>
     </li>
   {%- endfor -%}
 </ol>
